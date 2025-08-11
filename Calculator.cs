@@ -23,11 +23,8 @@ namespace Calculator_Refactor
         // Store the current operation to perform when equals is pressed
         string operation = "";
 
-        private void calcDisplay_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
+        // NUMBER BUTTONS
         private void numberButton_Click(object sender, EventArgs e)
         {
             // This method is used to handle the click event for all number buttons
@@ -44,7 +41,6 @@ namespace Calculator_Refactor
             // Button 1
             numberButton_Click(sender, e);
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -100,6 +96,8 @@ namespace Calculator_Refactor
             numberButton_Click(sender, e);
         }
 
+
+        // MISCELLANEOUS BUTTONS
         private void buttonClear_Click(object sender, EventArgs e)
         {
             // This clears the display
@@ -141,6 +139,26 @@ namespace Calculator_Refactor
             }
         }
 
+        private void buttonPercent_Click(object sender, EventArgs e)
+        {
+            // This is the percentage button
+            if (calcDisplay.Text.Length > 0)
+            {
+                // Try to parse the first number from the display text
+                if (double.TryParse(calcDisplay.Text, out firstNumber))
+                {
+                    // Convert to percentage
+                    MathFunctions obj_mathFunctions = new MathFunctions();
+                    firstNumber = obj_mathFunctions.Percent(firstNumber);
+
+                    // Display the percentage value
+                    calcDisplay.Text = firstNumber.ToString();
+                }
+            }
+        }
+
+
+        // MATHEMATICAL ACTIONS TO BE PERFORMED
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             // This is the addition button
@@ -268,34 +286,9 @@ namespace Calculator_Refactor
             }
         }
 
-        private void buttonPercent_Click(object sender, EventArgs e)
-        {
-            // This is the percentage button
-            if (calcDisplay.Text.Length > 0)
-            {
-                // Try to parse the first number from the display text
-                if (double.TryParse(calcDisplay.Text, out firstNumber))
-                {
-                    // Successfully parsed the number
-                    MathFunctions obj_mathFunctions = new MathFunctions();
-                    // Convert to percentage
-                    firstNumber = obj_mathFunctions.Percent(firstNumber);
-                    // Display the percentage value
-                    calcDisplay.Text = firstNumber.ToString();
-                }
-            }
-        }
+        
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripThemeMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // THEME SELECTIONS
         private void toolStripThemeLight_Click(object sender, EventArgs e)
         {
             if (toolStripThemeLight.Checked == false)
@@ -354,16 +347,6 @@ namespace Calculator_Refactor
                     }
                 }
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Calculator_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

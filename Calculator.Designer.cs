@@ -90,7 +90,6 @@
             this.groupBox1.Size = new System.Drawing.Size(331, 545);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // labelBrandName
             // 
@@ -375,7 +374,7 @@
             this.calcDisplay.Size = new System.Drawing.Size(298, 35);
             this.calcDisplay.TabIndex = 0;
             this.calcDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.calcDisplay.TextChanged += new System.EventHandler(this.calcDisplay_TextChanged);
+            //this.calcDisplay.TextChanged += new System.EventHandler(this.calcDisplay_TextChanged);
             // 
             // menuStrip1
             // 
@@ -396,7 +395,6 @@
             this.toolStripThemeMenu.Name = "toolStripThemeMenu";
             this.toolStripThemeMenu.Size = new System.Drawing.Size(56, 20);
             this.toolStripThemeMenu.Text = "Theme";
-            this.toolStripThemeMenu.Click += new System.EventHandler(this.toolStripThemeMenu_Click);
             // 
             // toolStripThemeLight
             // 
@@ -426,7 +424,6 @@
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.Calculator_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
