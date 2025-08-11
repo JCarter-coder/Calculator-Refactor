@@ -24,6 +24,7 @@ namespace Calculator_Refactor
         string operation = "";
 
 
+
         // NUMBER BUTTONS
         private void numberButton_Click(object sender, EventArgs e)
         {
@@ -97,6 +98,7 @@ namespace Calculator_Refactor
         }
 
 
+
         // MISCELLANEOUS BUTTONS
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -156,6 +158,7 @@ namespace Calculator_Refactor
                 }
             }
         }
+
 
 
         // MATHEMATICAL ACTIONS TO BE PERFORMED

@@ -374,7 +374,6 @@
             this.calcDisplay.Size = new System.Drawing.Size(298, 35);
             this.calcDisplay.TabIndex = 0;
             this.calcDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            //this.calcDisplay.TextChanged += new System.EventHandler(this.calcDisplay_TextChanged);
             // 
             // menuStrip1
             // 
