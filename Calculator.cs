@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CalcFunctions;
 
 namespace Calculator_Refactor
 {
@@ -228,25 +229,35 @@ namespace Calculator_Refactor
         {
             // This is the equals button
             double secondNumber;
-            if (double.TryParse(calcDisplay.Text, out secondNumber))
+            if (calcDisplay.Text.Length == 0 || operation == "")
+            {
+                // If the display is empty, do nothing
+                return;
+            }
+            else if (double.TryParse(calcDisplay.Text, out secondNumber))
             {
                 double result = 0;
+                MathFunctions obj_mathFunctions = new MathFunctions();
 
                 if (operation == "+")
                 {
-                    result = firstNumber + secondNumber; // Perform addition
+                    // Perform addition
+                    result = obj_mathFunctions.Add(firstNumber, secondNumber);
                 }
                 else if (operation == "-")
                 {
-                    result = firstNumber - secondNumber; // Perform subtraction
+                    // Perform subtraction
+                    result = obj_mathFunctions.Subtract(firstNumber, secondNumber);
                 }
                 else if (operation == "*")
                 {
-                    result = firstNumber * secondNumber; // Perform mulitplication
+                    // Perform mulitplication
+                    result = obj_mathFunctions.Multiply(firstNumber, secondNumber);
                 }
                 else if (operation == "/")
                 {
-                    result = firstNumber / secondNumber; // Perform division
+                    // Perform division
+                    result = obj_mathFunctions.Divide(firstNumber, secondNumber);
                 }
                 // Update firstNumber for potential further calculations
                 firstNumber = result;
