@@ -277,8 +277,9 @@ namespace Calculator_Refactor
                 if (double.TryParse(calcDisplay.Text, out firstNumber))
                 {
                     // Successfully parsed the number
+                    MathFunctions obj_mathFunctions = new MathFunctions();
                     // Convert to percentage
-                    firstNumber /= 100;
+                    firstNumber = obj_mathFunctions.Percent(firstNumber);
                     // Display the percentage value
                     calcDisplay.Text = firstNumber.ToString();
                 }
